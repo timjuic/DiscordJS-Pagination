@@ -1,10 +1,19 @@
 DiscordJS Pagination helper class that can be used to easily display large amounts of data in embeds
 
+# Importing
+
+```
+npm init
+npm i @timjuice/discordjs-pagination
+```
+
+`const Pagination = require('@timjuice/discordjs-pagination')`
+
 # Example usage
 
 ```javascript
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const Pagination = require('../../pagination.js')
+const Pagination = require('@timjuice/discordjs-pagination')
 
 module.exports = {
    data: new SlashCommandBuilder()
