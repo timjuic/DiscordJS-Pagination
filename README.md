@@ -3,7 +3,7 @@ DiscordJS Pagination helper class that can be used to easily display large amoun
 
 # Example usage
 
-```
+```javascript
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const Pagination = require('../../pagination.js')
 
