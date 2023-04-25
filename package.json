@@ -1,0 +1,23 @@
+{
+  "name": "@timjuice/discordjs-pagination",
+  "version": "1.0.0",
+  "description": "DiscordJS class that creates embed pagination with given data",
+  "main": "pagination.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timjuic/DiscordJS-Pagination.git"
+  },
+  "keywords": [
+    "javascript",
+    "discordjs"
+  ],
+  "author": "timjuice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timjuic/DiscordJS-Pagination/issues"
+  },
+  "homepage": "https://github.com/timjuic/DiscordJS-Pagination#readme"
+}

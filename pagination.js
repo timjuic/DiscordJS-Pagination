@@ -1,5 +1,4 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } = require('discord.js');
-const ms = require("ms");
 const PAGINATION_ACTIVE_DURATION_MINUTES = 3;
 
 module.exports = class Pagination {
@@ -54,13 +53,25 @@ module.exports = class Pagination {
    }
 
    setupNavButtons() {
-      let buttonRow = new ActionRowBuilder()
-      .addComponents(
-         new ButtonBuilder().setCustomId('first').setEmoji('⏪').setStyle(ButtonStyle.Primary).setDisabled(true),
-         new ButtonBuilder().setCustomId('prev').setEmoji('◀️').setStyle(ButtonStyle.Primary).setDisabled(true),
-         new ButtonBuilder().setCustomId('next').setEmoji('▶️').setStyle(ButtonStyle.Primary),
-         new ButtonBuilder().setCustomId('last').setEmoji('⏩').setStyle(ButtonStyle.Primary),
-      )
+      let buttonRow
+      if (this.data.length < this.dataPerPage) {
+         buttonRow = new ActionRowBuilder()
+         .addComponents(
+            new ButtonBuilder().setCustomId('first').setEmoji('⏪').setStyle(ButtonStyle.Primary).setDisabled(true),
+            new ButtonBuilder().setCustomId('prev').setEmoji('◀️').setStyle(ButtonStyle.Primary).setDisabled(true),
+            new ButtonBuilder().setCustomId('next').setEmoji('▶️').setStyle(ButtonStyle.Primary).setDisabled(true),
+            new ButtonBuilder().setCustomId('last').setEmoji('⏩').setStyle(ButtonStyle.Primary).setDisabled(true),
+         )
+      } else {
+         buttonRow = new ActionRowBuilder()
+         .addComponents(
+            new ButtonBuilder().setCustomId('first').setEmoji('⏪').setStyle(ButtonStyle.Primary).setDisabled(true),
+            new ButtonBuilder().setCustomId('prev').setEmoji('◀️').setStyle(ButtonStyle.Primary).setDisabled(true),
+            new ButtonBuilder().setCustomId('next').setEmoji('▶️').setStyle(ButtonStyle.Primary),
+            new ButtonBuilder().setCustomId('last').setEmoji('⏩').setStyle(ButtonStyle.Primary),
+         )
+      }
+
       this.buttonRows.push(buttonRow)
       return buttonRow;
    }
